@@ -1,5 +1,5 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+<!-- <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .invoice-container {
             max-width: 500px;
             margin: auto;
@@ -17,18 +18,23 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .logo {
             text-align: center;
         }
+
         .logo img {
             max-width: 170px;
         }
+
         .invoice-details {
             margin-top: 20px;
         }
+
         .invoice-details div {
             margin-bottom: 5px;
         }
+
         .description {
             font-size: larger;
             text-align: center;
@@ -36,28 +42,38 @@
             margin-bottom: 30px;
             font-weight: 600;
         }
+
         .contact-info {
             margin-top: 30px;
             margin-bottom: 30px;
         }
+
         .contact-info div {
             margin-bottom: 5px;
         }
+
         .table-container {
             margin-top: 40px;
             margin-bottom: 40px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid #ddd;
         }
-        th, td {
+
+        th,
+        td {
             padding: 10px;
             text-align: left;
         }
+
         .thank-you {
             margin-top: 30px;
             margin-bottom: 30px;
@@ -67,67 +83,77 @@
             text-align: center;
             margin-top: 30px;
         }
+
         .paid-icon {
             display: inline-block;
             width: 70px;
             height: 30px;
-            background-color: #4CAF50; /* Green color */
+            background-color: #4CAF50;
+            /* Green color */
             border-radius: 8%;
             text-align: center;
             line-height: 30px;
             color: white;
             font-weight: bold;
             font-size: 15px;
-            margin-right: 10px; /* Adjust spacing as needed */
+            margin-right: 10px;
+            /* Adjust spacing as needed */
         }
     </style>
 </head>
+
 <body>
 
-<div class="invoice-container">
-    <div class="logo">
-        <img src="logo/logo.PNG" alt="Company Logo">
+    <div class="invoice-container">
+        <div class="logo">
+            <img src="logo/logo.PNG" alt="Company Logo">
+        </div>
+        <div class="invoice-details">
+            <div><b>Invoice No:</b> 12345</div>
+            <div><b>Date:</b> 2024-05-22</div>
+        </div>
+        <div class="description">
+            It will be worth your while!
+        </div>
+        <div class="contact-info">
+            <div><b>Email:</b> example@example.com</div>
+            <div id=country></div>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>Movie Purchase</td>
+                    <td>27 AED</td>
+                </tr>
+            </table>
+        </div>
+        <div class="paid-icon">Paid</div>
+        <div class="thank-you">
+            Thanks
+        </div>
+        <div class="inquiries">
+            For any inquiries, please contact <a href="mailto: info@locomotivefilms.ae">info@locomotivefilms.ae</a>
+        </div>
     </div>
-    <div class="invoice-details">
-        <div><b>Invoice No:</b> 12345</div>
-        <div><b>Date:</b> 2024-05-22</div>
-    </div>
-    <div class="description">
-        It will be worth your while!
-    </div>
-    <div class="contact-info">
-        <div><b>Email:</b> example@example.com</div>
-        <div><b>Phone:</b> 123-456-7890</div>
-        <div><b>Subscription ID:</b> SUB123456</div>
-    </div>
-    <div class="table-container">
-        <table>
-            <tr>
-                <th>Description</th>
-                <th>Amount</th>
-            </tr>
-            <tr>
-                <td>Movie Purchase</td>
-                <td>27 AED</td>
-            </tr>
-        </table>
-    </div>
-    <div class="paid-icon">Paid</div>
-    <div class="thank-you">
-        Thanks
-    </div>
-    <div class="inquiries">
-        For any inquiries, please contact <a href="mailto: info@locomotivefilms.ae">info@locomotivefilms.ae</a>
-    </div>
-</div>
 
 </body>
-</html> -->
+
+<script>
+
+    fetch('https://api.ipdata.co?api-key=1e29d2089f7a7c412f8fef01f7de46ef1887c2348fb1e986be18a383')
+        .then(response => response.json())
+        .then(data => document.getElementById('country').innerHTML = `<b>Country:</b> ${data.country_name}`);
+    
 
 
+</script>
 
-
-
+</html>
+ -->
 
 
 <!DOCTYPE html>
@@ -230,8 +256,7 @@
     </div>
     <div class="contact-info">
         <div><b>البريد الإلكتروني:</b> example@example.com</div>
-        <div><b>رقم الهاتف:</b> 123-456-7890</div>
-        <div><b>هوية الإشتراك:</b> SUB123456</div>
+        <div id=country><b>بلد:</b></div>
     </div>
     <div class="table-container">
         <table>
@@ -256,4 +281,11 @@
 </div>
 
 </body>
-</html>
+<script>
+
+    fetch('https://api.ipdata.co?api-key=1e29d2089f7a7c412f8fef01f7de46ef1887c2348fb1e986be18a383')
+        .then(response => response.json())
+        .then(data => document.getElementById('country').innerHTML = `<b>بلد:</b> ${data.country_name}`);
+
+</script>
+</html> 
